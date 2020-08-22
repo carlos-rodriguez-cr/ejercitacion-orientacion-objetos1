@@ -1,20 +1,16 @@
 package consultorio;
 
-public class Paciente {
+public class Medico {
 	private String nombre;
 	private String apellido;
-	private float estatura;
-	private float peso;
-
-
-	public Paciente(String nombre, String apellido, float estatura, float peso) {
+	private String especialidad;
+	
+	public Medico(String nombre, String apellido, String especialidad) {
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.estatura = estatura;
-		this.peso = peso;
+		this.especialidad = especialidad;
 	}
 
-	
 	public String getNombre() {
 		return nombre;
 	}
@@ -31,25 +27,24 @@ public class Paciente {
 		this.apellido = apellido;
 	}
 
-	public float getEstatura() {
-		return estatura;
+	public String getEspecialidad() {
+		return especialidad;
 	}
 
-	public void setEstatura(float estatura) {
-		this.estatura = estatura;
+	public void setEspecialidad(String especialidad) {
+		this.especialidad = especialidad;
 	}
-
-	public float getPeso() {
-		return peso;
-	}
-
-	public void setPeso(float peso) {
-		this.peso = peso;
-	}
-
+	
 	public String traerNombreCompleto() {
 		String resultado;
 		resultado = nombre + " " + apellido;
 		return resultado;
 	}
+	
+	public float calcularImc(Paciente paciente) {
+		float imc;
+		imc = paciente.getPeso() / (paciente.getEstatura() * paciente.getEstatura());
+		return imc;
+	}
 }
+
