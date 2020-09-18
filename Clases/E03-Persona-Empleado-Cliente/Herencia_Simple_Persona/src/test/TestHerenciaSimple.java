@@ -29,7 +29,7 @@ public class TestHerenciaSimple {
 		
 		
 		
-		System.out.println(persona1.toString());
+		System.out.println(persona1);
 		System.out.println("Su edad es: " + persona1.calcularEdad(LocalDate.of(1995, 12, 6)));
 		System.out.println("Sueldo neto: " + empleado.calcularSueldo(3));
 		
